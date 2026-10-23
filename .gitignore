@@ -1,7 +1,11 @@
 .venv/
 __pycache__/
 *.pyc
+*.pyo
 .env
 rag_db/
 codegen_output/
+.crewai/
 *.dist-info/
+*.so
+*.egg-info/
