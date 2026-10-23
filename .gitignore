@@ -1,1 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
 .env
+rag_db/
+codegen_output/
+*.dist-info/
