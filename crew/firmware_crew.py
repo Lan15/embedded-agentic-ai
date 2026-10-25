@@ -75,6 +75,7 @@ def save_outputs(module_name, target, c_text, test_text, safety_report):
     out_dir = f"codegen_output/{module_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     os.makedirs(out_dir, exist_ok=True)
     header, source = split_header_source(c_text, module_name)
+    source = re.sub(r"^#define (\w+_BASE)\s+(.*)$", r"#ifndef \1\n#define \1 \2\n#endif", source, flags=re.M)
     open(f"{out_dir}/{module_name}.c", "w").write(source + "\n")
     if header:
         open(f"{out_dir}/{module_name}.h", "w").write(header + "\n")
