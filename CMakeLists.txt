@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(embedded_agentic C)
 set(CMAKE_C_STANDARD 11)
-include_directories(include tests/unity)
+include_directories(include tests/unity modules/uart_comm)
 file(GLOB SRCS src/**/*.c)
 if(ENABLE_TESTS)
   enable_testing()

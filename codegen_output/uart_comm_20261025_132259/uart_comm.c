@@ -55,7 +55,7 @@ UART_Status UART_Init(const UART_Config *config) {
             lcr |= 0x18; // Even parity
             break;
         case UART_PARITY_ODD:
-            lcr |= 0x38; // Odd parity
+            lcr |= 0x08; // Odd parity
             break;
         default:
             return UART_STATUS_ERROR_PARAMETER;
